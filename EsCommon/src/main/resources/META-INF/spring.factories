@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+common.com.es.cloud.generate.center.SpringContext,\
+common.com.es.cloud.generate.center.MybatisPlusConfig,\
+common.com.es.cloud.generate.center.AutowiredCustomPostProcessor,\
+common.com.es.cloud.generate.center.BaseController
