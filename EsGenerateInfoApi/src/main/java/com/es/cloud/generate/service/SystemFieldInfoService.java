@@ -12,7 +12,7 @@ import com.es.cloud.generate.entity.SystemFieldInfo;
  * @author zry
  * @since 2025-02-06
  */
-@RemoteService(appName = "esgendb", serviceName = "systemTableInfoService", path="systemfieldinfo")
+@RemoteService(appName = "esgendb", serviceName = "systemfieldinfo")
 public interface SystemFieldInfoService extends BaseUnitService<SystemFieldInfo> {
 
 }

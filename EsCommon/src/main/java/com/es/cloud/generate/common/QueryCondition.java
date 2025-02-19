@@ -2,8 +2,10 @@ package com.es.cloud.generate.common;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class QueryCondition {
+public class QueryCondition implements Serializable {
     private String fieldName;
     private String operator;
     private Object value;

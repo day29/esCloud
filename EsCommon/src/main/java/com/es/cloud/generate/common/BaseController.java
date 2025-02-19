@@ -38,9 +38,7 @@ public class BaseController {
             serviceClass = BaseUnitServiceImpl.class;
         }
         JSONArray param = JSON.parseArray(body);
-        Method[] methods = ReflectionUtils.getUniqueDeclaredMethods(serviceClass, m -> m.getName().equals(method) && m.getParameterCount() == param.size());
-        Assert.notEmpty(methods, "未找到方法");
-        Method m = methods[0];
+        Method m = getMethod(method, serviceClass, param);
         Type[] genericParameterTypes = m.getGenericParameterTypes();
         Object[] args = IntStream.range(0, param.size()).mapToObj(i -> {
             Type genericType = genericParameterTypes[i];
@@ -52,8 +50,16 @@ public class BaseController {
                 return param.getObject(i, (Class<?>) genericType);
             }
         }).toArray();
+
         Object ret = ReflectionUtils.invokeMethod(m, serviceObj, args);
         return JSON.toJSONString(ret);
+    }
+
+    private static Method getMethod(String method, Class serviceClass, JSONArray param) {
+        Method[] methods = ReflectionUtils.getUniqueDeclaredMethods(serviceClass, m -> m.getName().equals(method) && m.getParameterCount() == param.size());
+        Assert.notEmpty(methods, "未找到方法");
+        Method m = methods[0];
+        return m;
     }
 
     @PostMapping(value = "/binary/{serviceId}/{method}", consumes = MediaType.APPLICATION_OCTET_STREAM_VALUE)
@@ -70,7 +76,8 @@ public class BaseController {
         Class serviceClass = serviceObj.getClass();
         var mm = ReflectionUtils.findMethod(serviceClass, method, css);
         Method[] methods = ReflectionUtils.getUniqueDeclaredMethods(serviceClass, m -> m.getName().equals(method)
-                && m.getParameterCount() == arr.length && isSameType(m.getParameterTypes(), css));
+                && m.getParameterCount() == arr.length
+        );
         Assert.notEmpty(methods, "未找到方法");
         Method m = methods[0];
         Object ret = ReflectionUtils.invokeMethod(m, serviceObj, arr);

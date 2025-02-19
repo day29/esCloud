@@ -8,11 +8,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.es.gen</groupId>
-    <artifactId>EsGenerator</artifactId>
+    <artifactId>EsCloud</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>EsGenerator</name>
+    <name>EsCloud</name>
     <url>http://maven.apache.org</url>
     <modules>
         <module>EsCommon</module>
@@ -20,6 +20,7 @@
         <module>EsGenerateInfoApi</module>
         <module>EsGenerateCenter</module>
         <module>EsSystemGenerateManager</module>
+        <module>EsGenerateCenterApi</module>
     </modules>
 
     <properties>

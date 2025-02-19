@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
 
-@MapperScan(basePackages = "com.es.cloud.generate.center.mapper")
+@MapperScan(basePackages = "com.es.cloud.generate.mapper")
 @SpringBootApplication(exclude = JdbcRepositoriesAutoConfiguration.class)
 public class EsGendbApplication {
 

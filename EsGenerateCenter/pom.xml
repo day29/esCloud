@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.es.gen</groupId>
-        <artifactId>EsGenerator</artifactId>
+        <artifactId>EsCloud</artifactId>
         <version>1.0.0</version>
     </parent>
 
@@ -28,6 +28,12 @@
             <groupId>com.es.gen</groupId>
             <artifactId>EsGenerateInfoApi</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.es.gen</groupId>
+            <artifactId>EsGenerateCenterApi</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

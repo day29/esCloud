@@ -6,8 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
+
 @SpringBootApplication(exclude = {JdbcRepositoriesAutoConfiguration.class,
-        DruidDataSourceAutoConfigure.class, DataSourceAutoConfiguration.class})
+        DruidDataSourceAutoConfigure.class, DataSourceAutoConfiguration.class}
+//        ,scanBasePackages = "com.es.cloud.generate"
+)
 public class EsGenServerApplication {
 
     public static void main(String[] args) {

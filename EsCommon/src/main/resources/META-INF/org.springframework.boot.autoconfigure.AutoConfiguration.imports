@@ -1,0 +1,4 @@
+com.es.cloud.generate.common.SpringContext
+com.es.cloud.generate.common.MybatisPlusConfig
+com.es.cloud.generate.common.AutowiredCustomPostProcessor
+com.es.cloud.generate.common.BaseController

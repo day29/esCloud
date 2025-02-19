@@ -81,6 +81,7 @@ public class BaseUnitServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl
 
     private QueryWrapper<T> buildQueryWrapper(List<QueryCondition> conditions) {
         QueryWrapper<T> queryWrapper = new QueryWrapper<>();
+        queryWrapper.setEntityClass(getEntityClass());
         List<String> groupByFields = new ArrayList<>();
         if (conditions != null && !conditions.isEmpty()) {
             for (QueryCondition condition : conditions) {
